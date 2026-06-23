@@ -1,0 +1,1035 @@
+<!doctype html>
+<html lang="uz" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muso Muhammedov | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: "#0A0A0A", // Dark mode toza qora fon
+              foreground: "#ffffff",
+              accent: "#60b8ff",
+              card: "#121212",
+              muted: {
+                foreground: "#a3a3a3",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        background-color: #0a0a0a;
+        color: #ffffff;
+      }
+      @keyframes drift {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      .drift {
+        animation: drift 6s ease-in-out infinite;
+      }
+
+      ::-webkit-scrollbar {
+        width: 3px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.15);
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      .star-field {
+        background-image:
+          radial-gradient(
+            1px 1px at 10% 15%,
+            rgba(255, 255, 255, 0.4) 0%,
+            transparent 100%
+          ),
+          radial-gradient(
+            1px 1px at 30% 60%,
+            rgba(255, 255, 255, 0.3) 0%,
+            transparent 100%
+          ),
+          radial-gradient(
+            1px 1px at 55% 25%,
+            rgba(255, 255, 255, 0.35) 0%,
+            transparent 100%
+          ),
+          radial-gradient(
+            1px 1px at 75% 80%,
+            rgba(255, 255, 255, 0.25) 0%,
+            transparent 100%
+          ),
+          radial-gradient(
+            1px 1px at 90% 40%,
+            rgba(255, 255, 255, 0.3) 0%,
+            transparent 100%
+          ),
+          radial-gradient(
+            2px 2px at 45% 50%,
+            rgba(96, 184, 255, 0.15) 0%,
+            transparent 100%
+          );
+      }
+      .blue-glow {
+        box-shadow:
+          0 0 60px rgba(96, 184, 255, 0.08),
+          inset 0 0 60px rgba(96, 184, 255, 0.03);
+      }
+      .text-stroke {
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.25);
+        color: transparent;
+      }
+      .text-stroke-accent {
+        -webkit-text-stroke: 1px #60b8ff;
+        color: transparent;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen overflow-x-hidden font-['Inter']">
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between"
+      >
+        <a href="#hero" class="flex items-center gap-3 group">
+          <div
+            class="w-8 h-8 border border-white/30 flex items-center justify-center group-hover:border-accent transition-colors"
+          >
+            <span class="text-xs font-bold text-accent font-['JetBrains_Mono']"
+              >M</span
+            >
+          </div>
+          <span
+            class="text-sm font-bold tracking-[0.2em] text-white group-hover:text-accent transition-colors font-['Barlow_Condensed']"
+            >MUSO</span
+          >
+        </a>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            href="#about"
+            class="text-sm text-neutral-400 hover:text-white transition-colors relative group py-1"
+          >
+            Haqimda
+            <span
+              class="absolute bottom-0 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#skills"
+            class="text-sm text-neutral-400 hover:text-white transition-colors relative group py-1"
+          >
+            Ko'nikmalar
+            <span
+              class="absolute bottom-0 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#projects"
+            class="text-sm text-neutral-400 hover:text-white transition-colors relative group py-1"
+          >
+            Loyihalar
+            <span
+              class="absolute bottom-0 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#contact"
+            class="text-sm text-neutral-400 hover:text-white transition-colors relative group py-1"
+          >
+            Bog'lanish
+            <span
+              class="absolute bottom-0 left-0 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="#contact"
+            class="text-sm border border-white/25 text-white px-5 py-2 hover:border-white hover:bg-white/5 transition-all duration-300"
+          >
+            Bog'lanish
+          </a>
+        </div>
+
+        <button class="md:hidden text-white" onclick="toggleMenu()">
+          <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-neutral-900 border-b border-white/10 px-6 pb-5 space-y-3"
+      >
+        <a
+          href="#about"
+          onclick="toggleMenu()"
+          class="block py-3 text-neutral-400 hover:text-white border-b border-white/5"
+          >Haqimda</a
+        >
+        <a
+          href="#skills"
+          onclick="toggleMenu()"
+          class="block py-3 text-neutral-400 hover:text-white border-b border-white/5"
+          >Ko'nikmalar</a
+        >
+        <a
+          href="#projects"
+          onclick="toggleMenu()"
+          class="block py-3 text-neutral-400 hover:text-white border-b border-white/5"
+          >Loyihalar</a
+        >
+        <a
+          href="#contact"
+          onclick="toggleMenu()"
+          class="block py-3 text-neutral-400 hover:text-white"
+          >Bog'lanish</a
+        >
+      </div>
+    </nav>
+
+    <section
+      id="hero"
+      class="relative min-h-screen flex items-center overflow-hidden star-field"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-br from-[#050810] via-[#080d1c] to-[#050810] -z-20"
+      ></div>
+
+      <div class="absolute inset-0 -z-10">
+        <img
+          src="https://images.unsplash.com/photo-1502126324834-38f8e02d7160?w=1600&h=900&fit=crop&auto=format"
+          alt="Tog"
+          class="w-full h-full object-cover opacity-20"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-background/20"
+        ></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/40"
+        ></div>
+      </div>
+
+      <div
+        class="absolute top-1/3 right-1/4 w-96 h-96 rounded-full bg-accent/5 blur-3xl pointer-events-none drift"
+      ></div>
+      <div
+        class="absolute left-12 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/10 to-transparent hidden lg:block"
+      ></div>
+
+      <div class="relative z-10 max-w-6xl mx-auto px-6 pt-28 pb-24 w-full">
+        <div class="flex items-center gap-3 mb-10">
+          <div class="w-10 h-px bg-white/30"></div>
+          <span
+            class="text-xs tracking-[0.25em] text-white/40 font-['JetBrains_Mono']"
+            >WEB DEV · CALISTHENICS · ALPINIST</span
+          >
+        </div>
+
+        <div class="mb-4">
+          <h1
+            class="text-[clamp(72px,14vw,160px)] font-black leading-none text-stroke font-['Barlow_Condensed']"
+          >
+            MUSO
+          </h1>
+          <h1
+            class="text-[clamp(72px,14vw,160px)] font-black leading-none font-['Barlow_Condensed'] text-accent"
+          >
+            MUHAMMEDOV
+          </h1>
+        </div>
+
+        <div class="flex items-center gap-4 mb-8">
+          <div class="h-px w-16 bg-white/20"></div>
+          <span
+            class="text-xs text-white/35 tracking-[0.15em] font-['JetBrains_Mono']"
+            >15 YOSH · O'ZBEKISTON</span
+          >
+        </div>
+
+        <p class="text-neutral-400 text-lg leading-relaxed max-w-lg mb-10">
+          Kod, tog' va harakat — mening uchlikligim. Frontend dunyosida o'z
+          yo'limni quraman, cho'qqilarda ruhimni tozalayman, calisthenics bilan
+          tanámni chiniqtiraman.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="#projects"
+            class="flex items-center gap-2 bg-accent text-black px-7 py-3 font-bold text-sm hover:bg-accent/85 transition-all duration-300 hover:gap-3"
+          >
+            Loyihalar <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+          <a
+            href="#about"
+            class="flex items-center gap-2 border border-white/25 text-white px-7 py-3 font-medium text-sm hover:border-white/60 hover:bg-white/5 transition-all duration-300"
+          >
+            <i class="fa-solid fa-mountain text-xs"></i> Ko'proq bilish
+          </a>
+        </div>
+
+        <div class="flex gap-5 mt-12">
+          <a
+            href="https://github.com"
+            target="_blank"
+            class="w-9 h-9 border border-white/15 flex items-center justify-center text-white/40 hover:border-white/40 hover:text-white transition-all duration-300"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a
+            href="mailto:muso@example.com"
+            class="w-9 h-9 border border-white/15 flex items-center justify-center text-white/40 hover:border-white/40 hover:text-white transition-all duration-300"
+          >
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a
+            href="#"
+            class="w-9 h-9 border border-white/15 flex items-center justify-center text-white/40 hover:border-white/40 hover:text-white transition-all duration-300"
+          >
+            <i class="fa-solid fa-globe"></i>
+          </a>
+        </div>
+      </div>
+
+      <a
+        href="#about"
+        class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30 hover:text-white/60 transition-colors animate-bounce"
+      >
+        <i class="fa-solid fa-chevron-down text-xl"></i>
+      </a>
+    </section>
+
+    <div class="border-y border-white/10 bg-neutral-900/50">
+      <div
+        class="max-w-6xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6"
+      >
+        <div class="flex items-center gap-4 group">
+          <div
+            class="w-10 h-10 border border-white/12 flex items-center justify-center flex-shrink-0 group-hover:border-white/30 transition-colors"
+          >
+            <i class="fa-solid fa-code text-accent"></i>
+          </div>
+          <div>
+            <div
+              class="text-2xl font-black leading-none font-['Barlow_Condensed']"
+            >
+              3+
+            </div>
+            <div class="text-xs text-neutral-400 mt-0.5">Yil kod yozish</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 group">
+          <div
+            class="w-10 h-10 border border-white/12 flex items-center justify-center flex-shrink-0 group-hover:border-white/30 transition-colors"
+          >
+            <i class="fa-solid fa-layer-group text-accent"></i>
+          </div>
+          <div>
+            <div
+              class="text-2xl font-black leading-none font-['Barlow_Condensed']"
+            >
+              12+
+            </div>
+            <div class="text-xs text-neutral-400 mt-0.5">Tugatilgan loyiha</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 group">
+          <div
+            class="w-10 h-10 border border-white/12 flex items-center justify-center flex-shrink-0 group-hover:border-white/30 transition-colors"
+          >
+            <i class="fa-solid fa-mountain text-accent"></i>
+          </div>
+          <div>
+            <div
+              class="text-2xl font-black leading-none font-['Barlow_Condensed']"
+            >
+              20+
+            </div>
+            <div class="text-xs text-neutral-400 mt-0.5">
+              Zabt etilgan cho'qqi
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center gap-4 group">
+          <div
+            class="w-10 h-10 border border-white/12 flex items-center justify-center flex-shrink-0 group-hover:border-white/30 transition-colors"
+          >
+            <i class="fa-solid fa-tree text-accent"></i>
+          </div>
+          <div>
+            <div
+              class="text-2xl font-black leading-none font-['Barlow_Condensed']"
+            >
+              500+
+            </div>
+            <div class="text-xs text-neutral-400 mt-0.5">
+              Km piyoda trekking
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="about" class="py-28 max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-20 items-center">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-px bg-white/30"></div>
+            <span
+              class="text-xs text-white/40 tracking-[0.2em] font-['JetBrains_Mono']"
+              >01 / HAQIMDA</span
+            >
+          </div>
+          <h2
+            class="text-[clamp(52px,7vw,80px)] font-black leading-none mb-8 font-['Barlow_Condensed']"
+          >
+            CHO'QQI & <br />
+            <span class="text-accent">KOD</span> ORASIDA
+          </h2>
+          <div class="space-y-4 text-neutral-400 leading-relaxed">
+            <p>
+              Men Muso — 15 yoshli frontend developer va aktiv alpinist.
+              Tog'larga tirmashish va kod yozish bir-biriga o'xshaydi:
+              ikkalasida ham sabr, strategiya va cheksiz qiziqish kerak.
+            </p>
+            <p>
+              Calisthenics bilan 2 yildan beri shug'ullanaman. Muscle-up, front
+              lever va human flag — bu harakatlar faqat jismoniy emas, balki
+              aqliy kuch ham talab qiladi. Xuddi debugging kabi.
+            </p>
+            <p>
+              Yozda O'zbekiston tog'larini, qishda qor qoplagan cho'qqilarni
+              zabt etaman. Har trek yangi g'oya, har cho'qqi — yangi qarash.
+            </p>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div
+            class="relative overflow-hidden blue-glow border border-white/12"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1507034589631-9433cc6bc453?w=600&h=750&fit=crop&auto=format"
+              alt="Tog"
+              class="w-full aspect-[4/5] object-cover opacity-75"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent"
+            ></div>
+            <div
+              class="absolute w-6 h-6 border-t border-l border-white/50 top-0 left-0"
+            ></div>
+            <div
+              class="absolute w-6 h-6 border-t border-r border-white/50 top-0 right-0"
+            ></div>
+            <div
+              class="absolute w-6 h-6 border-b border-l border-white/50 bottom-0 left-0"
+            ></div>
+            <div
+              class="absolute w-6 h-6 border-b border-r border-white/50 bottom-0 right-0"
+            ></div>
+          </div>
+          <div
+            class="absolute -bottom-5 -right-5 md:right-0 bg-accent text-black px-5 py-3 blue-glow"
+          >
+            <div
+              class="text-3xl font-black leading-none font-['Barlow_Condensed']"
+            >
+              ALPINIST
+            </div>
+            <div class="text-xs font-semibold tracking-widest mt-0.5">
+              & DEVELOPER
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 border-y border-white/10 bg-neutral-900/30">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-center gap-3 mb-12">
+          <div class="w-8 h-px bg-white/30"></div>
+          <span
+            class="text-xs text-white/40 tracking-[0.2em] font-['JetBrains_Mono']"
+            >EHTIROSLARIM</span
+          >
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div
+            class="border border-white/12 bg-neutral-900 p-6 hover:border-white/30 transition-all duration-400"
+          >
+            <i class="fa-solid fa-mountain text-xl text-accent mb-4"></i>
+            <h3
+              class="text-xl font-bold mb-2 font-['Barlow_Condensed'] tracking-wide"
+            >
+              Tog' Tirmashish
+            </h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+              Har hafta yangi cho'qqiga chiqaman. Tog'lar menga cheksizlikni his
+              qildiradi.
+            </p>
+            <div
+              class="text-accent text-sm font-semibold font-['JetBrains_Mono']"
+            >
+              20+ cho'qqi
+            </div>
+          </div>
+          <div
+            class="border border-white/12 bg-neutral-900 p-6 hover:border-white/30 transition-all duration-400"
+          >
+            <i class="fa-solid fa-dumbbell text-xl text-accent mb-4"></i>
+            <h3
+              class="text-xl font-bold mb-2 font-['Barlow_Condensed'] tracking-wide"
+            >
+              Calisthenics
+            </h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+              Muscle-up, front lever, planche — tanani nazorat qilish san'ati.
+            </p>
+            <div
+              class="text-accent text-sm font-semibold font-['JetBrains_Mono']"
+            >
+              2 yil
+            </div>
+          </div>
+          <div
+            class="border border-white/12 bg-neutral-900 p-6 hover:border-white/30 transition-all duration-400"
+          >
+            <i class="fa-solid fa-tree text-xl text-accent mb-4"></i>
+            <h3
+              class="text-xl font-bold mb-2 font-['Barlow_Condensed'] tracking-wide"
+            >
+              Aylanish
+            </h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+              Piyoda sayohat, trek, o'rmon yo'llari — tabiatda yurishdan
+              energiya olaman.
+            </p>
+            <div
+              class="text-accent text-sm font-semibold font-['JetBrains_Mono']"
+            >
+              500+ km
+            </div>
+          </div>
+          <div
+            class="border border-white/12 bg-neutral-900 p-6 hover:border-white/30 transition-all duration-400"
+          >
+            <i class="fa-solid fa-wind text-xl text-accent mb-4"></i>
+            <h3
+              class="text-xl font-bold mb-2 font-['Barlow_Condensed'] tracking-wide"
+            >
+              Ochiq Havo
+            </h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-4">
+              Qor, yomg'ir, tuman — hech qanday ob-havo to'xtata olmaydi. Doim
+              harakatda.
+            </p>
+            <div
+              class="text-accent text-sm font-semibold font-['JetBrains_Mono']"
+            >
+              12 oy
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="py-28 max-w-6xl mx-auto px-6">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-8 h-px bg-white/30"></div>
+        <span
+          class="text-xs text-white/40 tracking-[0.2em] font-['JetBrains_Mono']"
+          >02 / KO'NIKMALAR</span
+        >
+      </div>
+      <h2
+        class="text-[clamp(52px,7vw,80px)] font-black leading-none mb-16 font-['Barlow_Condensed']"
+      >
+        TEXNIK <br />
+        <span class="text-accent">KO'NIKMALAR</span>
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-x-20 gap-y-8">
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-sm font-medium">HTML / CSS</span>
+            <div class="flex items-center gap-3 font-['JetBrains_Mono']">
+              <span
+                class="text-xs text-neutral-400 border border-white/10 px-2 py-0.5"
+                >Frontend</span
+              >
+              <span class="text-accent text-sm font-semibold">90%</span>
+            </div>
+          </div>
+          <div class="h-px bg-white/10 overflow-hidden">
+            <div class="h-full bg-accent w-[90%]"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-sm font-medium">JavaScript</span>
+            <div class="flex items-center gap-3 font-['JetBrains_Mono']">
+              <span
+                class="text-xs text-neutral-400 border border-white/10 px-2 py-0.5"
+                >Frontend</span
+              >
+              <span class="text-accent text-sm font-semibold">82%</span>
+            </div>
+          </div>
+          <div class="h-px bg-white/10 overflow-hidden">
+            <div class="h-full bg-accent w-[82%]"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-sm font-medium">React</span>
+            <div class="flex items-center gap-3 font-['JetBrains_Mono']">
+              <span
+                class="text-xs text-neutral-400 border border-white/10 px-2 py-0.5"
+                >Frontend</span
+              >
+              <span class="text-accent text-sm font-semibold">75%</span>
+            </div>
+          </div>
+          <div class="h-px bg-white/10 overflow-hidden">
+            <div class="h-full bg-accent w-[75%]"></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between items-center mb-2">
+            <span class="text-sm font-medium">Tailwind CSS</span>
+            <div class="flex items-center gap-3 font-['JetBrains_Mono']">
+              <span
+                class="text-xs text-neutral-400 border border-white/10 px-2 py-0.5"
+                >Frontend</span
+              >
+              <span class="text-accent text-sm font-semibold">85%</span>
+            </div>
+          </div>
+          <div class="h-px bg-white/10 overflow-hidden">
+            <div class="h-full bg-accent w-[85%]"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 flex flex-wrap gap-2 font-['JetBrains_Mono']">
+        <span
+          class="border border-white/12 text-neutral-400 text-xs px-4 py-2 hover:border-white/30 hover:text-white transition-all duration-300"
+          >VS Code</span
+        >
+        <span
+          class="border border-white/12 text-neutral-400 text-xs px-4 py-2 hover:border-white/30 hover:text-white transition-all duration-300"
+          >Vite</span
+        >
+        <span
+          class="border border-white/12 text-neutral-400 text-xs px-4 py-2 hover:border-white/30 hover:text-white transition-all duration-300"
+          >Git & GitHub</span
+        >
+        <span
+          class="border border-white/12 text-neutral-400 text-xs px-4 py-2 hover:border-white/30 hover:text-white transition-all duration-300"
+          >Figma</span
+        >
+      </div>
+    </section>
+
+    <section class="relative py-36 overflow-hidden border-y border-white/10">
+      <img
+        src="https://images.unsplash.com/photo-1605270160644-d52c6515c141?w=1600&h=700&fit=crop&auto=format"
+        alt="Tog"
+        class="absolute inset-0 w-full h-full object-cover opacity-15 -z-20"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/50 -z-10"
+      ></div>
+      <div class="relative z-10 max-w-6xl mx-auto px-6">
+        <div class="max-w-xl">
+          <div class="flex items-center gap-3 mb-6">
+            <i class="fa-solid fa-mountain text-accent"></i>
+            <span
+              class="text-xs text-white/40 tracking-[0.2em] font-['JetBrains_Mono']"
+              >TOG' FALSAFASI</span
+            >
+          </div>
+          <h2
+            class="text-[clamp(52px,8vw,96px)] font-black leading-none mb-6 font-['Barlow_Condensed']"
+          >
+            YUQORIGA — <br />
+            <span class="text-accent">DOIM</span> <br />
+            <span class="text-stroke-accent">YUQORIGA</span>
+          </h2>
+          <p class="text-neutral-400 leading-relaxed text-base">
+            Har cho'qqi oldida xuddi yangi loyihaning birinchi sahifasi kabi his
+            qilaman — qo'rquv, hayajon va eng chuqur qiziqish. Bu ikki soha
+            menga o'rgatdi: muvaffaqiyat — hech qachon to'g'ri chiziq emas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-28 max-w-6xl mx-auto px-6">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-8 h-px bg-white/30"></div>
+        <span
+          class="text-xs text-white/40 tracking-[0.2em] font-['JetBrains_Mono']"
+          >03 / LOYIHALAR</span
+        >
+      </div>
+      <div
+        class="flex flex-col sm:flex-row sm:items-end justify-between mb-14 gap-4"
+      >
+        <h2
+          class="text-[clamp(52px,7vw,80px)] font-black leading-none font-['Barlow_Condensed']"
+        >
+          TANLANGAN <br />
+          <span class="text-accent">ISHLAR</span>
+        </h2>
+        <p class="text-neutral-400 text-sm max-w-xs leading-relaxed">
+          Har bir loyiha — yangi cho'qqi. Qiyinligi bor, lekin zabt etiladi.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <div
+          class="group border border-white/15 bg-neutral-900/50 hover:border-white/40 transition-all duration-500"
+        >
+          <div class="relative h-52 overflow-hidden bg-neutral-800">
+            <img
+              src="https://images.unsplash.com/photo-1502126324834-38f8e02d7160?w=600&h=400&fit=crop&auto=format"
+              class="w-full h-full object-cover opacity-50 group-hover:opacity-75 group-hover:scale-105 transition-all duration-700"
+            />
+            <span
+              class="absolute top-3 right-3 text-xs text-white/50 border border-white/15 bg-neutral-900/70 backdrop-blur-sm px-2 py-0.5 font-['JetBrains_Mono']"
+              >2025</span
+            >
+          </div>
+          <div class="p-6">
+            <h3 class="text-3xl font-black mb-2 font-['Barlow_Condensed']">
+              SummitLog
+            </h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-5">
+              Tog' tirmashishlarini kuzatuvchi ilova. GPX marshrutlar va
+              balandlik grafiklari bilan.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-5 font-['JetBrains_Mono']">
+              <span
+                class="text-xs text-white/60 border border-white/15 px-2 py-0.5"
+                >React</span
+              >
+              <span
+                class="text-xs text-white/60 border border-white/15 px-2 py-0.5"
+                >TypeScript</span
+              >
+            </div>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="flex items-center gap-1.5 text-sm text-neutral-400 hover:text-white transition-colors"
+                ><i class="fa-brands fa-github text-xs"></i> Kod</a
+              >
+              <a
+                href="#"
+                class="flex items-center gap-1.5 text-sm text-accent hover:text-accent/75 transition-colors"
+                ><i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                Demo</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="group border border-white/15 bg-neutral-900/50 hover:border-white/40 transition-all duration-500"
+        >
+          <div class="relative h-52 overflow-hidden bg-neutral-800">
+            <img
+              src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=600&h=400&fit=crop&auto=format"
+              class="w-full h-full object-cover opacity-50 group-hover:opacity-75 group-hover:scale-105 transition-all duration-700"
+            />
+            <span
+              class="absolute top-3 right-3 text-xs text-white/50 border border-white/15 bg-neutral-900/70 backdrop-blur-sm px-2 py-0.5 font-['JetBrains_Mono']"
+              >2024</span
+            >
+          </div>
+          <div class="p-6">
+            <h3 class="text-3xl font-black mb-2 font-['Barlow_Condensed']">
+              CaliFlow
+            </h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-5">
+              Calisthenics trenirovka rejalashtiruvchi. Harakat kutubxonasi va
+              progress tracker.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-5 font-['JetBrains_Mono']">
+              <span
+                class="text-xs text-white/60 border border-white/15 px-2 py-0.5"
+                >React</span
+              >
+              <span
+                class="text-xs text-white/60 border border-white/15 px-2 py-0.5"
+                >CSS</span
+              >
+            </div>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="flex items-center gap-1.5 text-sm text-neutral-400 hover:text-white transition-colors"
+                ><i class="fa-brands fa-github text-xs"></i> Kod</a
+              >
+              <a
+                href="#"
+                class="flex items-center gap-1.5 text-sm text-accent hover:text-accent/75 transition-colors"
+                ><i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                Demo</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="group border border-white/15 bg-neutral-900/50 hover:border-white/40 transition-all duration-500"
+        >
+          <div class="relative h-52 overflow-hidden bg-neutral-800">
+            <img
+              src="https://images.unsplash.com/photo-1507034589631-9433cc6bc453?w=600&h=400&fit=crop&auto=format"
+              class="w-full h-full object-cover opacity-50 group-hover:opacity-75 group-hover:scale-105 transition-all duration-700"
+            />
+            <span
+              class="absolute top-3 right-3 text-xs text-white/50 border border-white/15 bg-neutral-900/70 backdrop-blur-sm px-2 py-0.5 font-['JetBrains_Mono']"
+              >2024</span
+            >
+          </div>
+          <div class="p-6">
+            <h3 class="text-3xl font-black mb-2 font-['Barlow_Condensed']">
+              WildRoute
+            </h3>
+            <p class="text-neutral-400 text-sm leading-relaxed mb-5">
+              Tabiat marshrut topish platformasi. Foydalanuvchilar yo'riqlar
+              qo'shishi mumkin.
+            </p>
+            <div class="flex flex-wrap gap-1.5 mb-5 font-['JetBrains_Mono']">
+              <span
+                class="text-xs text-white/60 border border-white/15 px-2 py-0.5"
+                >JavaScript</span
+              >
+              <span
+                class="text-xs text-white/60 border border-white/15 px-2 py-0.5"
+                >MongoDB</span
+              >
+            </div>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="flex items-center gap-1.5 text-sm text-neutral-400 hover:text-white transition-colors"
+                ><i class="fa-brands fa-github text-xs"></i> Kod</a
+              >
+              <a
+                href="#"
+                class="flex items-center gap-1.5 text-sm text-accent hover:text-accent/75 transition-colors"
+                ><i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                Demo</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a
+          href="https://github.com"
+          target="_blank"
+          class="inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition-colors"
+        >
+          <i class="fa-brands fa-github"></i> Barcha loyihalar GitHub'da
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+    </section>
+
+    <section
+      id="contact"
+      class="py-28 border-t border-white/10 bg-neutral-900/20"
+    >
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-px bg-white/30"></div>
+          <span
+            class="text-xs text-white/40 tracking-[0.2em] font-['JetBrains_Mono']"
+            >04 / BOG'LANISH</span
+          >
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+          <div>
+            <h2
+              class="text-[clamp(52px,7vw,80px)] font-black leading-none mb-6 font-['Barlow_Condensed']"
+            >
+              HAMKORLIK <br />
+              <span class="text-accent">QILAYLIK</span>
+            </h2>
+            <p class="text-neutral-400 leading-relaxed mb-10 max-w-sm">
+              Loyiha, g'oya yoki shunchaki salom uchun yozing. Tog'dagi signal
+              ham bo'lsa, javob beraman!
+            </p>
+            <div class="space-y-4">
+              <a
+                href="mailto:muso@example.com"
+                class="flex items-center gap-4 group"
+              >
+                <div
+                  class="w-9 h-9 border border-white/12 flex items-center justify-center group-hover:border-white/35 transition-colors"
+                >
+                  <i
+                    class="fa-solid fa-envelope text-neutral-400 group-hover:text-accent transition-colors"
+                  ></i>
+                </div>
+                <span
+                  class="text-neutral-400 group-hover:text-white transition-colors text-sm"
+                  >muso@example.com</span
+                >
+              </a>
+              <a
+                href="https://github.com"
+                class="flex items-center gap-4 group"
+              >
+                <div
+                  class="w-9 h-9 border border-white/12 flex items-center justify-center group-hover:border-white/35 transition-colors"
+                >
+                  <i
+                    class="fa-brands fa-github text-neutral-400 group-hover:text-accent transition-colors"
+                  ></i>
+                </div>
+                <span
+                  class="text-neutral-400 group-hover:text-white transition-colors text-sm"
+                  >github.com/musomuhammedov</span
+                >
+              </a>
+            </div>
+          </div>
+
+          <form onsubmit="event.preventDefault()" class="space-y-4">
+            <div>
+              <label
+                class="block text-xs text-white/30 mb-1.5 tracking-[0.15em] font-['JetBrains_Mono']"
+                >ISMINGIZ</label
+              >
+              <input
+                type="text"
+                placeholder="Akbar Raximov"
+                class="w-full bg-neutral-900 border border-white/12 px-4 py-3 text-white placeholder:text-white/20 focus:border-white/35 focus:outline-none transition-colors text-sm"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-xs text-white/30 mb-1.5 tracking-[0.15em] font-['JetBrains_Mono']"
+                >EMAIL</label
+              >
+              <input
+                type="email"
+                placeholder="akbar@example.com"
+                class="w-full bg-neutral-900 border border-white/12 px-4 py-3 text-white placeholder:text-white/20 focus:border-white/35 focus:outline-none transition-colors text-sm"
+              />
+            </div>
+            <div>
+              <label
+                class="block text-xs text-white/30 mb-1.5 tracking-[0.15em] font-['JetBrains_Mono']"
+                >XABAR</label
+              >
+              <textarea
+                rows="5"
+                placeholder="Salom Muso! Bir loyiha haqida..."
+                class="w-full bg-neutral-900 border border-white/12 px-4 py-3 text-white placeholder:text-white/20 focus:border-white/35 focus:outline-none transition-colors text-sm resize-none"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-accent text-black py-3.5 font-bold text-sm hover:bg-accent/85 transition-colors flex items-center justify-center gap-2"
+            >
+              YUBORISH <i class="fa-solid fa-arrow-right text-xs"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-white/10 py-8">
+      <div
+        class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3"
+      >
+        <div class="flex items-center gap-2">
+          <div
+            class="w-5 h-5 border border-white/20 flex items-center justify-center"
+          >
+            <span
+              class="text-accent font-bold font-['JetBrains_Mono'] text-[9px]"
+              >M</span
+            >
+          </div>
+          <span class="text-white/25 text-xs">© 2025 Muso Muhammedov</span>
+        </div>
+        <span class="text-white/20 text-xs font-['JetBrains_Mono']"
+          >HTML · CSS · Tailwind</span
+        >
+      </div>
+    </footer>
+
+    <script>
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add(
+            "bg-black/90",
+            "backdrop-blur-lg",
+            "border-b",
+            "border-white/10",
+          );
+        } else {
+          navbar.classList.remove(
+            "bg-black/90",
+            "backdrop-blur-lg",
+            "border-b",
+            "border-white/10",
+          );
+        }
+      });
+
+      function toggleMenu() {
+        const menu = document.getElementById("mobile-menu");
+        const icon = document.getElementById("menu-icon");
+        if (menu.classList.contains("hidden")) {
+          menu.classList.remove("hidden");
+          icon.classList.replace("fa-bars", "fa-xmark");
+        } else {
+          menu.classList.add("hidden");
+          icon.classList.replace("fa-xmark", "fa-bars");
+        }
+      }
+    </script>
+  </body>
+</html>
